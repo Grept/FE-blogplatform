@@ -13,32 +13,35 @@ function App() {
     const [isAuthenticated, toggleIsAuthenticated] = useState(false);
 
     return (
-        <>
+        <main>
             <nav>
                 <ul>
-                    <li><NavLink to="/">Home</NavLink></li>
-                    <li><NavLink to="/login">Login</NavLink></li>
-                    <li><NavLink to="/blogposts">BlogPosts</NavLink></li>
+                    <li><NavLink to="/" activeClassName="active-link">Home</NavLink></li>
+                    <li><NavLink to="/blogposts" activeClassName="active-link">BlogPosts</NavLink></li>
+                    <li><NavLink to="/login" activeClassName="active-link">Login</NavLink></li>
                 </ul>
             </nav>
-            <Switch>
-                <Route exact path="/">
-                    <HomePage />
-                </Route>
+            <section>
+                <Switch>
+                    <Route exact path="/">
+                        <HomePage />
+                    </Route>
 
-                <Route exact path="/login">
-                    <LoginPage auth={toggleIsAuthenticated}/>
-                </Route>
+                    <Route exact path="/login">
+                        <LoginPage auth={toggleIsAuthenticated}/>
+                    </Route>
 
-                <Route exact path="/blogposts">
-                    <BlogPostOverviewPage />
-                </Route>
+                    <Route exact path="/blogposts">
+                        <BlogPostOverviewPage className="blog-post-overview" />
+                    </Route>
 
-                <Route exact path="/blogposts/:blogId">
-                    {isAuthenticated === true ? <BlogPostPage /> : <Redirect to="/login" />}
-                </Route>
-            </Switch>
-        </>
+                    <Route exact path="/blogposts/:blogId">
+                        {isAuthenticated === true ? <BlogPostPage /> : <Redirect to="/login" />}
+                    </Route>
+                </Switch>
+
+            </section>
+        </main>
     );
 }
 
