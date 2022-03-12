@@ -1,11 +1,13 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 
-function LoginPage(props) {
+function LoginPage({auth}) {
 
-    const {auth} = props;
+    const history = useHistory();
 
     function login() {
         auth(true);
+        history.push("/blogposts")
     }
 
     return(

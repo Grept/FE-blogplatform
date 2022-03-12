@@ -1,28 +1,46 @@
+main {
+  display: flex;
+  flex-direction: column;
+
+}
+
 nav {
   /*background-color: black;*/
+  background-color: orange;
   display: flex;
   justify-content: center;
+  flex-grow: 1;
+  padding: 10px 0 10px 0;
+  margin: 0 0 10px 0;
 }
 
 nav ul {
-  background-color: orange;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   flex-grow: 1;
+  list-style: none;
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-}
 
 section {
-  border: 2px solid black;
+  border: 1px solid lightgrey;
   border-radius: 30px;
-  max-width: 70%;
+  margin: 0 100px 0 100px;
+  padding: 30px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.active-link {
+  font-weight: bold;
+  border: 1px solid white;
+  padding: 3px;
+}
+
+.navlink {
+  color: white;
+  text-decoration: none;
 }

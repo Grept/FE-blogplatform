@@ -6,6 +6,7 @@ import HomePage from "./components/HomePage";
 import LoginPage from "./components/LoginPage";
 import BlogPostOverviewPage from "./components/BlogPostOverviewPage";
 import BlogPostPage from "./components/BlogPostPage";
+import NavBar from "./components/NavBar";
 
 
 function App() {
@@ -15,11 +16,7 @@ function App() {
     return (
         <main>
             <nav>
-                <ul>
-                    <li><NavLink to="/" activeClassName="active-link">Home</NavLink></li>
-                    <li><NavLink to="/blogposts" activeClassName="active-link">BlogPosts</NavLink></li>
-                    <li><NavLink to="/login" activeClassName="active-link">Login</NavLink></li>
-                </ul>
+                <NavBar isAuth={isAuthenticated} auth={toggleIsAuthenticated} />
             </nav>
             <section>
                 <Switch>
