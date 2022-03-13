@@ -7,6 +7,7 @@ import LoginPage from "./components/LoginPage";
 import BlogPostOverviewPage from "./components/BlogPostOverviewPage";
 import BlogPostPage from "./components/BlogPostPage";
 import NavBar from "./components/NavBar";
+import PrivateRoute from "./components/PrivateRoute";
 
 
 function App() {
@@ -28,13 +29,13 @@ function App() {
                         <LoginPage auth={toggleIsAuthenticated}/>
                     </Route>
 
-                    <Route exact path="/blogposts">
+                    <PrivateRoute exact path="/blogposts" isAuth={isAuthenticated}>
                         <BlogPostOverviewPage className="blog-post-overview" />
-                    </Route>
+                    </PrivateRoute>
 
-                    <Route exact path="/blogposts/:blogId">
-                        {isAuthenticated === true ? <BlogPostPage /> : <Redirect to="/login" />}
-                    </Route>
+                    <PrivateRoute exact path="/blogposts/:blogId" isAuth={isAuthenticated}>
+                        <BlogPostPage />
+                    </PrivateRoute>
                 </Switch>
 
             </section>

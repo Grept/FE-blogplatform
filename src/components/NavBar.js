@@ -17,11 +17,13 @@ export default function NavBar({isAuth, auth}) {
                 activeClassName="active-link"
                 className="navlink"
             >Home</NavLink></li>
-            <li><NavLink
-                exact to="/blogposts"
-                activeClassName="active-link"
-                className="navlink"
-            >BlogPosts</NavLink></li>
+            {isAuth &&
+                <li><NavLink
+                    exact to="/blogposts"
+                    activeClassName="active-link"
+                    className="navlink"
+                >BlogPosts</NavLink></li>
+            }
             <li>{isAuth ? <button type="button" onClick={handleClick}>UITLOGGEN</button> :
                 <NavLink
                     exact to="/login"
