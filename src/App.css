@@ -44,3 +44,9 @@ section {
   color: white;
   text-decoration: none;
 }
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0 10px 0;
+}

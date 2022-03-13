@@ -1,7 +1,9 @@
+// IMPORTS
 import React, {useState} from 'react';
 import './App.css';
-import {Switch, Route, NavLink, Redirect} from "react-router-dom";
+import {Switch, Route} from "react-router-dom";
 
+// COMPONENT IMPORTS
 import HomePage from "./components/HomePage";
 import LoginPage from "./components/LoginPage";
 import BlogPostOverviewPage from "./components/BlogPostOverviewPage";

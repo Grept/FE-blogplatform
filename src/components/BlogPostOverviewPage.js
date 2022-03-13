@@ -1,5 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
+
+// DATA IMPORT
 import posts from "../data/posts.json"
 
 function BlogPostOverviewPage() {
