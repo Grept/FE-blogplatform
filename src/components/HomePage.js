@@ -1,6 +1,6 @@
 import React from "react";
 
-function HomePage() {
+export default function HomePage() {
     return (
         <>
             <h1>The Homepage</h1>
@@ -11,7 +11,5 @@ function HomePage() {
                 asperiores, deserunt dolore ex iusto nulla quas quia quidem tempore vero. Eum, fugit!
             </p>
         </>
-    )
+    );
 }
-
-export default HomePage;

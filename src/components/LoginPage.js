@@ -3,20 +3,20 @@ import {useHistory} from "react-router-dom";
 import {useForm} from "react-hook-form";
 
 // DATA IMPORT
-import users from "../data/users.json"
+import users from "../data/users.json";
 
 // COMPONENT IMPORT
 import FormField from "./FormField";
 
-function LoginPage({auth}) {
+export default function LoginPage({auth}) {
 
     const history = useHistory();
-    const {register, handleSubmit, formState: {errors}} = useForm()
+    const {register, handleSubmit, formState: {errors}} = useForm();
 
     // LOG THE USER IN
     function login() {
         auth(true);
-        history.push("/blogposts")
+        history.push("/blogposts");
     }
 
     // CHECK FOR CORRECT USERNAME AND PASSWORD
@@ -24,11 +24,12 @@ function LoginPage({auth}) {
         const foundUser = users.find(e => e.username === data.username)
 
         if (foundUser === undefined) {
-            alert("ERROR: User not found")
+            alert("ERROR: User not found");
         } else if (foundUser.password === data.password) {
             login();
         } else {
-            alert("ERROR: Wrong password")
+            alert("ERROR: Wrong password");
+            history.push("/login");
         }
     }
 
@@ -64,7 +65,5 @@ function LoginPage({auth}) {
             </form>
             <p>Please login!</p>
         </>
-    )
+    );
 }
-
-export default LoginPage;

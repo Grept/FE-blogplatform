@@ -7,7 +7,7 @@ export default function NavBar({isAuth, auth}) {
 
     function handleClick() {
         auth(false);
-        history.push("/")
+        history.push("/");
     }
 
     return (

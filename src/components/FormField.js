@@ -13,5 +13,5 @@ export default function FormField({errors, name, children, type, register, valid
             />
             {errors[name] && <p className="error-message">{errors[name].message}</p>}
         </div>
-    )
+    );
 }

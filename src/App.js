@@ -11,7 +11,7 @@ import NavBar from "./components/NavBar";
 import PrivateRoute from "./components/PrivateRoute";
 
 
-function App() {
+export default function App() {
     // We houden in de state bij of iemand is "ingelogd" (simpele versie)
     const [isAuthenticated, toggleIsAuthenticated] = useState(false);
 
@@ -43,5 +43,3 @@ function App() {
         </main>
     );
 }
-
-export default App;
