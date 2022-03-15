@@ -5,10 +5,13 @@ import {useForm} from "react-hook-form";
 // DATA IMPORT
 import users from "../data/users.json"
 
+// COMPONENT IMPORT
+import FormField from "./FormField";
+
 function LoginPage({auth}) {
 
     const history = useHistory();
-    const {register, handleSubmit} = useForm()
+    const {register, handleSubmit, formState: {errors}} = useForm()
 
     // LOG THE USER IN
     function login() {
@@ -33,26 +36,30 @@ function LoginPage({auth}) {
         <>
             <h1>Login Page</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <div className="form-field">
-                    <label htmlFor="username">
-                        Username:
-                    </label>
-                    <input
-                        type="text"
-                        {...register("username")}
-                    />
-                </div>
+                <FormField
+                    name="username"
+                    type="text"
+                    register={register}
+                    validation={{
+                        required: "Please enter a username."
+                    }}
+                    errors={errors}
+                >
+                    Username:
+                </FormField>
 
-                <div className="form-field">
-                    <label htmlFor="password">
-                        Password:
-                    </label>
-                    <input
-                        type="password"
-                        {...register("password")}
-                    />
+                <FormField
+                    name="password"
+                    type="password"
+                    register={register}
+                    validation={{
+                        required: "Please enter a password."
+                    }}
+                    errors={errors}
+                >
+                    Password:
+                </FormField>
 
-                </div>
                 <button type="submit">INLOGGEN</button>
             </form>
             <p>Please login!</p>

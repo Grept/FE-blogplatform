@@ -1,7 +1,6 @@
-// IMPORTS
 import React, {useState} from 'react';
-import './App.css';
 import {Switch, Route} from "react-router-dom";
+import './App.css';
 
 // COMPONENT IMPORTS
 import HomePage from "./components/HomePage";
@@ -19,12 +18,12 @@ function App() {
     return (
         <main>
             <nav>
-                <NavBar isAuth={isAuthenticated} auth={toggleIsAuthenticated} />
+                <NavBar isAuth={isAuthenticated} auth={toggleIsAuthenticated}/>
             </nav>
             <section>
                 <Switch>
                     <Route exact path="/">
-                        <HomePage />
+                        <HomePage/>
                     </Route>
 
                     <Route exact path="/login">
@@ -32,11 +31,11 @@ function App() {
                     </Route>
 
                     <PrivateRoute exact path="/blogposts" isAuth={isAuthenticated}>
-                        <BlogPostOverviewPage className="blog-post-overview" />
+                        <BlogPostOverviewPage className="blog-post-overview"/>
                     </PrivateRoute>
 
                     <PrivateRoute exact path="/blogposts/:blogId" isAuth={isAuthenticated}>
-                        <BlogPostPage />
+                        <BlogPostPage/>
                     </PrivateRoute>
                 </Switch>
 

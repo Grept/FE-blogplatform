@@ -5,7 +5,6 @@ main {
 }
 
 nav {
-  /*background-color: black;*/
   background-color: orange;
   display: flex;
   justify-content: center;
@@ -49,4 +48,9 @@ section {
   display: flex;
   flex-direction: column;
   margin: 10px 0 10px 0;
+}
+
+.error-message {
+  font-size: 10px;
+  color: red;
 }
